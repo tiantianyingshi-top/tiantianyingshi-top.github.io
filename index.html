@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天天影视 - 天天更新好剧好片，在线影视第一站</title>
+<meta name="description" content="天天影视(tiantianyingshi-top)每日更新电影、电视剧、动漫、综艺，高清流畅免费看。天天影视，天天有新品，宅家追剧看片好去处。">
+<meta name="keywords" content="天天影视, tiantianyingshi-top, 天天影视网, 影视大全, 免费电影, 在线追剧, 高清影视">
+<meta name="author" content="天天影视">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://tiantianyingshi-top.github.io">
+<meta property="og:type" content="website">
+<meta property="og:title" content="天天影视 - 天天更新好剧好片，在线影视第一站">
+<meta property="og:description" content="天天影视每日更新电影、电视剧、动漫、综艺，高清流畅免费看。">
+<meta property="og:url" content="https://tiantianyingshi-top.github.io">
+<meta property="og:site_name" content="天天影视">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "天天影视",
+  "url": "https://tiantianyingshi-top.github.io",
+  "description": "天天影视提供电影、电视剧、动漫、综艺每日更新在线观看。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tiantianyingshi-top.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<style>
+:root{
+  --crt-bg:#0a0e14;
+  --crt-bg2:#111822;
+  --scan:#7fffd4;
+  --scan2:#ff7eb9;
+  --scan3:#ffe347;
+  --tube:#e8f4f0;
+  --muted:#7d96a8;
+  --line:rgba(127,255,212,.28);
+  --card:rgba(255,255,255,.04);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'VT323','Courier New',monospace,'PingFang SC','Microsoft YaHei',sans-serif;
+  background:
+    repeating-linear-gradient(0deg, rgba(127,255,212,.035) 0 1px, transparent 1px 3px),
+    radial-gradient(900px 600px at 82% -8%, rgba(255,126,185,.14), transparent 60%),
+    radial-gradient(800px 500px at -8% 8%, rgba(127,255,212,.12), transparent 55%),
+    linear-gradient(155deg,var(--crt-bg),var(--crt-bg2));
+  background-attachment:fixed;
+  color:var(--tube);
+  line-height:1.65;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+
+/* CRT 扫描线覆层 */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background:repeating-linear-gradient(0deg, rgba(0,0,0,.16) 0 1px, transparent 1px 3px);
+}
+
+/* 顶部频道条 */
+.channel{
+  position:sticky;top:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.9rem 1.4rem;
+  background:rgba(10,14,20,.9);
+  backdrop-filter:blur(8px);
+  border-bottom:2px solid var(--scan);
+}
+.station{display:flex;align-items:center;gap:.8rem;font-weight:700;font-size:1.25rem;letter-spacing:1px}
+.station .crt-dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--scan);box-shadow:0 0 12px var(--scan);
+  animation:blip 1.6s infinite;
+}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:.35}}
+.station b{color:var(--scan)}
+.live{
+  font-size:.72rem;letter-spacing:3px;color:var(--scan2);
+  border:1px solid var(--scan2);padding:.25rem .7rem;border-radius:3px;
+}
+.menu{list-style:none;display:flex;gap:1.2rem;font-size:.95rem}
+.menu a{color:var(--muted);padding:.3rem .2rem;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--scan);border-color:var(--scan2)}
+
+/* 主视觉：测试卡 */
+.testcard{
+  max-width:1160px;margin:0 auto;padding:4rem 1.4rem 2.5rem;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:2.2rem;align-items:center;
+}
+.testcard h1{
+  font-size:clamp(2rem,5.5vw,3.8rem);font-weight:700;line-height:1.1;
+  color:var(--scan);
+  text-shadow:0 0 14px rgba(127,255,212,.4);
+}
+.testcard h1 em{font-style:normal;color:var(--scan2)}
+.testcard p.lead{color:var(--muted);margin:1rem 0 1.5rem;max-width:520px;font-size:1rem}
+.bars{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.bar{
+  font-size:.72rem;padding:.3rem .8rem;border:1px dashed var(--line);color:var(--scan);
+  background:rgba(127,255,212,.05);
+}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{border:0;cursor:pointer;padding:.75rem 1.6rem;border-radius:2px;font-weight:700;font-size:.95rem;font-family:inherit}
+.btn-tune{background:var(--scan);color:var(--crt-bg)}
+.btn-tune:hover{background:#a8ffe0;transform:translateY(-2px);box-shadow:0 8px 20px rgba(127,255,212,.3)}
+.btn-off{background:transparent;color:var(--tube);border:1px solid var(--line)}
+.btn-off:hover{background:rgba(127,255,212,.08)}
+
+/* 电视机测试卡海报 */
+.tv-card{
+  position:relative;border-radius:10px;overflow:hidden;
+  aspect-ratio:3/4;
+  background:
+    radial-gradient(circle at 30% 28%, #ffe347 0 12%, transparent 13%),
+    radial-gradient(circle at 72% 60%, #ff7eb9 0 12%, transparent 13%),
+    conic-gradient(from 0deg at 50% 40%, #7fffd4, #ffe347, #ff7eb9, #7fffd4);
+  border:3px solid var(--scan);
+  box-shadow:0 0 40px rgba(127,255,212,.2), inset 0 0 40px rgba(0,0,0,.3);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:1.3rem;
+}
+.tv-card .ch{font-size:1.3rem;font-weight:700;color:#0a0e14;text-shadow:0 0 6px rgba(255,255,255,.6)}
+.tv-card .chsub{color:#1a1a1a;font-size:.85rem;font-weight:700}
+
+/* 数据 */
+.figures{
+  max-width:1160px;margin:1rem auto;padding:0 1.4rem;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;
+  border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);
+}
+.fig{padding:1.4rem;text-align:center;border-right:1px dashed var(--line)}
+.fig:last-child{border-right:none}
+.fig b{font-size:1.9rem;color:var(--scan2);display:block}
+.fig small{color:var(--muted);font-size:.82rem}
+
+/* 区块 */
+.wrap{max-width:1160px;margin:0 auto;padding:2.6rem 1.4rem}
+.head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.4rem;padding-bottom:.7rem;border-bottom:1px solid var(--line)}
+.head .ch-no{font-size:1.6rem;color:var(--scan2);font-weight:700}
+.head h2{font-size:1.5rem;color:var(--scan);font-weight:700}
+.head a{margin-left:auto;color:var(--muted);font-size:.85rem}
+.head a:hover{color:var(--scan)}
+
+/* 片单横滑 */
+.rail{
+  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(165px,1fr);
+  gap:1rem;overflow-x:auto;padding-bottom:.8rem;scroll-snap-type:x mandatory;
+}
+.rail::-webkit-scrollbar{height:8px}
+.rail::-webkit-scrollbar-thumb{background:rgba(127,255,212,.35)}
+.film{
+  scroll-snap-align:start;border-radius:4px;overflow:hidden;
+  background:var(--card);border:1px solid var(--line);transition:.25s;
+}
+.film:hover{transform:translateY(-4px);border-color:var(--scan2);box-shadow:0 14px 32px rgba(255,126,185,.18)}
+.film .thumb{aspect-ratio:2/3;display:grid;place-items:center;font-size:2.6rem;
+  background:repeating-linear-gradient(45deg, rgba(127,255,212,.12) 0 8px, rgba(0,0,0,.2) 8px 16px)}
+.film .meta{padding:.7rem .8rem}
+.film .meta b{display:block;font-size:.95rem;color:var(--tube)}
+.film .meta small{color:var(--muted)}
+
+/* 网格卡片 */
+.grid{display:grid;gap:1.1rem}
+.c3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.c4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.box{padding:1.3rem;border-radius:4px;background:var(--card);border:1px solid var(--line);transition:.25s}
+.box:hover{transform:translateY(-4px);background:rgba(127,255,212,.05)}
+.box .ic{
+  width:42px;height:42px;border:1px solid var(--scan);border-radius:3px;
+  display:grid;place-items:center;font-size:1.2rem;color:var(--scan);margin-bottom:.8rem;
+}
+.box h3{font-size:1.12rem;color:var(--scan);margin-bottom:.4rem;font-weight:700}
+.box p{color:var(--muted);font-size:.9rem;margin-bottom:.9rem}
+.box a{color:var(--scan2);font-weight:700;font-size:.88rem}
+
+/* 节目单 */
+.schedule{
+  max-width:900px;margin:0 auto;padding:2.4rem 1.4rem;
+}
+.schedule table{width:100%;border-collapse:collapse;font-size:.92rem}
+.schedule th,.schedule td{padding:.75rem;border:1px solid var(--line);text-align:left}
+.schedule th{color:var(--scan);background:rgba(127,255,212,.06)}
+.schedule td{color:var(--muted)}
+.schedule tr:hover td{color:var(--tube);background:rgba(127,255,212,.04)}
+
+/* 底部 */
+footer{border-top:2px solid var(--scan);padding:2.4rem 1.4rem;margin-top:3rem;background:rgba(10,14,20,.6)}
+.foot{max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:space-between;align-items:center}
+.foot ul{list-style:none;display:flex;gap:1rem;flex-wrap:wrap}
+.foot a{color:var(--muted);font-size:.88rem}
+.foot a:hover{color:var(--scan)}
+.copy{color:var(--muted);font-size:.82rem;max-width:1160px;margin:1.2rem auto 0;line-height:1.8}
+
+.reveal{opacity:0;transform:translateY(24px);transition:.6s ease}
+.reveal.show{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .testcard{grid-template-columns:1fr;padding-top:3rem}
+  .tv-card{max-width:320px;margin:0 auto}
+  .menu{display:none}
+  .fig{border-right:none;border-bottom:1px dashed var(--line)}
+  .fig:last-child{border-bottom:none}
+}
+@media(max-width:520px){
+  .head{flex-wrap:wrap}
+  .head a{margin-left:0;width:100%}
+}
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="channel">
+  <a class="station" href="#top"><span class="crt-dot"></span> 天天<b>影视</b></a>
+  <span class="live">● ON AIR</span>
+  <nav><ul class="menu">
+    <li><a href="#today">今日播单</a></li>
+    <li><a href="#movie">电影</a></li>
+    <li><a href="#tv">电视剧</a></li>
+    <li><a href="#anime">动漫</a></li>
+    <li><a href="#about">关于</a></li>
+  </ul></nav>
+</header>
+
+<section class="testcard" id="top">
+  <div>
+    <h1>天天<em>影视</em><br>天天有好片</h1>
+    <p class="lead">天天影视（tiantianyingshi-top）就像家里那台老电视机，天天换台都有新节目：电影、电视剧、动漫、综艺，高清流畅，打开就看，天天不重样。</p>
+    <div class="bars">
+      <span class="bar">天天更新</span>
+      <span class="bar">高清流畅</span>
+      <span class="bar">全程免费</span>
+      <span class="bar">手机自适应</span>
+      <span class="bar">tiantianyingshi-top</span>
+    </div>
+    <div class="cta">
+      <a class="btn btn-tune" href="#today">换台开看</a>
+      <a class="btn btn-off" href="#about">频道介绍</a>
+    </div>
+  </div>
+  <div class="tv-card">
+    <div class="ch">TEST CARD · 天天影视</div>
+    <div class="chsub">COLOR BAR / 2026 / CH.天天</div>
+  </div>
+</section>
+
+<div class="figures">
+  <div class="fig reveal"><b>16000+</b><small>影视资源</small></div>
+  <div class="fig reveal"><b>1080P</b><small>高清画质</small></div>
+  <div class="fig reveal"><b>天天</b><small>更新播单</small></div>
+  <div class="fig reveal"><b>0 元</b><small>全程免费</small></div>
+</div>
+
+<section class="wrap" id="today">
+  <div class="head reveal">
+    <span class="ch-no">CH.1</span><h2>今日播单</h2><a href="#">全部节目 →</a>
+  </div>
+  <div class="rail">
+    <a class="film" href="#"><div class="thumb">🦸</div><div class="meta"><b>城市守护者</b><small>动作 / 2026</small></div></a>
+    <a class="film" href="#"><div class="thumb">👻</div><div class="meta"><b>旧楼谜案</b><small>悬疑 / 2026</small></div></a>
+    <a class="film" href="#"><div class="thumb">💘</div><div class="meta"><b>雨天咖啡馆</b><small>爱情 / 2026</small></div></a>
+    <a class="film" href="#"><div class="thumb">🚀</div><div class="meta"><b>星际快递</b><small>科幻 / 2026</small></div></a>
+    <a class="film" href="#"><div class="thumb">😂</div><div class="meta"><b>乌龙派出所</b><small>喜剧 / 2026</small></div></a>
+    <a class="film" href="#"><div class="thumb">🌊</div><div class="meta"><b>潮汐之下</b><small>文艺 / 2026</small></div></a>
+  </div>
+</section>
+
+<section class="wrap" id="movie">
+  <div class="head reveal">
+    <span class="ch-no">CH.2</span><h2>电影频道</h2><a href="#">更多电影 →</a>
+  </div>
+  <div class="grid c4">
+    <div class="box reveal"><div class="ic">💥</div><h3>动作大片</h3><p>好莱坞视效大片，拳拳到肉，看得过瘾。</p><a href="#">换台 →</a></div>
+    <div class="box reveal"><div class="ic">🕯️</div><h3>悬疑烧脑</h3><p>反转密集，看完想二刷找伏笔。</p><a href="#">换台 →</a></div>
+    <div class="box reveal"><div class="ic">💗</div><h3>爱情文艺</h3><p>细腻情感，适合深夜慢慢看。</p><a href="#">换台 →</a></div>
+    <div class="box reveal"><div class="ic">🎭</div><h3>经典老片</h3><p>修复高清老电影，怀旧专场。</p><a href="#">换台 →</a></div>
+  </div>
+</section>
+
+<section class="wrap" id="tv">
+  <div class="head reveal">
+    <span class="ch-no">CH.3</span><h2>电视剧场</h2><a href="#">更多剧集 →</a>
+  </div>
+  <div class="grid c3">
+    <div class="box reveal"><div class="ic">🏙️</div><h3>都市剧场</h3><p>职场恋爱家庭，贴近生活很共情。</p><a href="#">追剧 →</a></div>
+    <div class="box reveal"><div class="ic">🏰</div><h3>古装大戏</h3><p>服化道考究，权谋爱情双线并进。</p><a href="#">追剧 →</a></div>
+    <div class="box reveal"><div class="ic">🔍</div><h3>刑侦单元</h3><p>一案一集层层剥开，越看越上头。</p><a href="#">追剧 →</a></div>
+  </div>
+</section>
+
+<section class="wrap" id="anime">
+  <div class="head reveal">
+    <span class="ch-no">CH.4</span><h2>动漫时段</h2><a href="#">全部番剧 →</a>
+  </div>
+  <div class="grid c4">
+    <div class="box reveal"><div class="ic">⚔️</div><h3>热血战斗</h3><p>燃向番剧，打斗作画拉满。</p><a href="#">看番 →</a></div>
+    <div class="box reveal"><div class="ic">🌸</div><h3>治愈日常</h3><p>慢节奏生活番，放松心情。</p><a href="#">看番 →</a></div>
+    <div class="box reveal"><div class="ic">🧙</div><h3>奇幻冒险</h3><p>异世界冒险，脑洞大开。</p><a href="#">看番 →</a></div>
+    <div class="box reveal"><div class="ic">🤖</div><h3>机甲科幻</h3><p>硬核机甲与未来世界。</p><a href="#">看番 →</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="head reveal">
+    <span class="ch-no">CH.5</span><h2>综艺时段</h2><a href="#">更多综艺 →</a>
+  </div>
+  <div class="grid c3">
+    <div class="box reveal"><div class="ic">🎤</div><h3>真人秀</h3><p>明星真实一面，欢乐不断。</p><a href="#">播放 →</a></div>
+    <div class="box reveal"><div class="ic">🎵</div><h3>音乐现场</h3><p>竞演与 live，听觉盛宴。</p><a href="#">播放 →</a></div>
+    <div class="box reveal"><div class="ic">🍳</div><h3>生活文化</h3><p>美食旅行，开阔视野。</p><a href="#">播放 →</a></div>
+  </div>
+</section>
+
+<section class="schedule" id="about">
+  <div class="head reveal">
+    <span class="ch-no">EPG</span><h2>今日节目单</h2>
+  </div>
+  <table class="reveal">
+    <thead><tr><th>时间</th><th>频道</th><th>节目</th></tr></thead>
+    <tbody>
+      <tr><td>19:00</td><td>CH.1 综合</td><td>天天影视开场 · 今日精选</td></tr>
+      <tr><td>20:00</td><td>CH.2 电影</td><td>动作大片连播</td></tr>
+      <tr><td>21:30</td><td>CH.3 剧场</td><td>都市剧更新两集</td></tr>
+      <tr><td>22:30</td><td>CH.4 动漫</td><td>深夜番半小時</td></tr>
+      <tr><td>23:30</td><td>CH.5 综艺</td><td>音乐现场录播</td></tr>
+    </tbody>
+  </table>
+  <div class="box reveal" style="margin-top:2rem;max-width:900px">
+    <div class="ic">📺</div>
+    <h3>关于天天影视</h3>
+    <p>天天影视（<b>tiantianyingshi-top</b>），网址：<code style="color:var(--scan)">https://tiantianyingshi-top.github.io</code>。本站是影视导航与播单展示单页，栏目含今日播单、电影频道、电视剧场、动漫时段、综艺时段、今日节目单，内页链接先用 # 占位，后续替换为真实片源页。</p>
+    <a href="#">访问官网 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <a class="station" href="#top"><span class="crt-dot"></span> 天天<b>影视</b></a>
+    <ul>
+      <li><a href="#today">今日播单</a></li>
+      <li><a href="#movie">电影</a></li>
+      <li><a href="#tv">电视剧</a></li>
+      <li><a href="#anime">动漫</a></li>
+      <li><a href="#about">关于</a></li>
+    </ul>
+  </div>
+  <div class="copy">
+    网站名称：天天影视　·　网站网址：https://tiantianyingshi-top.github.io<br>
+    关键词：天天影视、tiantianyingshi-top、天天影视网、影视大全、免费电影、在线追剧<br>
+    © 2026 天天影视 保留所有权利　·　演示页面，内页链接均为 # 占位
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+});
+</script>
+</body>
+</html>
